@@ -6,5 +6,5 @@ import"./assets/modulepreload-polyfill-ec808ebb.js";/* empty css                
             alt="${o.description}" 
             />
     </a>
-</li>`,"");function e(p){p.preventDefault()}new a(".gallery",{captionsData:"alt",captionDelay:250});
+</li>`,"");function e(p){p.preventDefault()}new a(".gallery a",{captionsData:"alt",captionDelay:250});
 //# sourceMappingURL=commonHelpers.js.map
