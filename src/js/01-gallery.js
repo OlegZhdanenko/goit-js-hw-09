@@ -103,7 +103,7 @@ function onClick(event) {
     event.preventDefault()
 };
 
-new SimpleLightbox('.gallery', {
+new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
     captionDelay: 250,
 });

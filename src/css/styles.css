@@ -47,6 +47,8 @@ a {
 img {
   width: 400px;
   height: 220px;
+};
+.feedback-form{
+  display: flex;
+  flex-direction: column;
 }
-
-;
