@@ -5,7 +5,7 @@ form.addEventListener("input", onForm);
 const { email, message } = form.elements;
 let formData = {};
 function onForm(event) {
-    formData[event.target.name] = event.target.value;
+    formData[event.target.name] = event.target.value.trim();
     localStorage.setItem('feedback-form-state', JSON.stringify(formData));  
 };
 
@@ -14,9 +14,9 @@ function onSubmit(event) {
     const emailOnSubmit = formOnSubmit.elements.email.value;
     const messegeOnSubmit = formOnSubmit.elements.message.value;
     if (emailOnSubmit === "" || messegeOnSubmit === "") {
-    return alert("Заповни всі поля")
+    return alert("Fill in all fields!")
     } else {
-        console.log(JSON.parse(localStorage.getItem('feedback-form-state').trim()));
+        console.log(JSON.parse(localStorage.getItem('feedback-form-state')));
         event.preventDefault();
         event.currentTarget.reset();
     };

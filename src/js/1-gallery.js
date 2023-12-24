@@ -72,36 +72,19 @@ const images = [
 
 const container = document.querySelector(".gallery");
 
-container.addEventListener("click", onClick);
-
-
-// 1-способ
-// const markup = images.map(({ preview, original, description }) =>
-//     `<li class="gallery-item">
-//     <a class="gallery-link" href="large-image.jpg">
-//         <img 
-//             class="gallery-image" 
-//             src="small-image.jpg" 
-//             alt="Image description" 
-//             />
-//     </a>
-// </li>`
-// ).join('');
-container.innerHTML = images.reduce((html, image) =>
-    html + `<li class="gallery-item">
-    <a class="gallery-link" href="${image.original}">
+const markup = images.map(({ preview, original, description }) =>
+    `<li class="gallery-item">
+    <a class="gallery-link" href="${original}">
         <img 
             class="gallery-image" 
-            src="${image.preview}" 
-            alt="${image.description}" 
+            src="${preview}" 
+            alt="${description}" 
             />
     </a>
-</li>`, ""
+</li>`
 );
 
-function onClick(event) {
-    event.preventDefault()
-};
+container.insertAdjacentHTML("beforeend",markup.join(''))
 
 new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
